@@ -31,22 +31,18 @@
             <div class="media-body">
                 <h5 class="mt-0">No motion prediction of an NPC vehicle under low speed</h5>
                 <p>
-                    In the video, Apollo is expected to drive straight across the junction. However, it
-                    seems to be too confident about bypassing the obstacle coming from right side, which eventually
-                    resulted in collision.
+                    In the video, Apollo needed to drive straight across the junction. However, it seemed too confident
+                    to bypass the obstacle from the right side, resulting in a collision.
                 </p>
                 <p>
-                    Apollo's prediction module returns no predicted trajectory for "still" vehicles of speed less
-                    than 0.99 m/s (default configuration). Since the speed of the vehicle in this scenario was 0.5
-                    m/s, no predicted trajectory was generated.
+                    Apollo's prediction module returns no predicted trajectory for "still" vehicles of speed less than
+                    0.99 m/s (default configuration). Since the speed of the vehicle in this scenario was 0.5 m/s, no
+                    predicted trajectory was generated. As a result, the planning module did not slow down since its
+                    trajectory was not blocked by any obstacle or predicted traveling paths, leading to a collision.
                 </p>
                 <p>
-                    As a result, the planning module did not slow down since its planned trajectory was not blocked
-                    by any obstacle or their predicted traveling paths, which resulted in collision.
-                </p>
-                <p>
-                    This scenario is not at all challenging for human drivers, as there is sufficient space and time
-                    for braking to give way to the slowly moving obstacle vehicle.
+                    This scenario is not challenging for human drivers, as there are sufficient space and time for
+                    braking to give way to the slowly moving obstacle vehicle.
                 </p>
             </div>
         </div>
@@ -59,20 +55,18 @@
             <div class="media-body">
                 <h5 class="mt-0">Wrong motion prediction of an NPC vehicle</h5>
                 <p>
-                    In this video, Apollo is expected to give way or by pass the slow vehicle cutting in ahead.
+                    Apollo is expected to give way or pass the slow vehicle cutting in ahead in this video.
                 </p>
                 <p>
                     Apollo's prediction module produced a wrong predicted trajectory for the front obstacle vehicle,
-                    letting Apollo to believe that the vehicle was maintaining its own lane instead of cutting in to
-                    Apollo's lane.
+                    letting Apollo believe that the vehicle maintained its lane instead of cutting into Apollo's lane.
                 </p>
                 <p>
-                    As a result, Apollo's planning module did not brake to give way or bypass from left side, which
-                    eventually led to collision.
+                    As a result, Apollo's planning module did not de-accelerate to give way or bypass from the left
+                    side, which eventually led to the collision.
                 </p>
                 <p>
-                    It is apparent that human drivers can easily notice the cutting-in vehicle ahead and would brake to
-                    give way.
+                    Human drivers can quickly notice the cutting-in vehicle ahead and brake to give way.
                 </p>
             </div>
         </div>
@@ -85,35 +79,23 @@
             <div class="media-body">
                 <h5 class="mt-0">Decision oscillation during lane changing</h5>
                 <p>
-                    In the video, Apollo first decided to overtake the slow moving vehicle ahead, but the overtaking
-                    action is terminated halfway and Apollo started to follow the vehicle on top of lane
+                    In the video, Apollo first decided to overtake the slow-moving vehicle ahead. However, Apollo
+                    terminated the overtaking action halfway and started to follow the vehicle on top of lane
                     boundaries.
                 </p>
                 <p>
-                    In Apollo 5.0, planning module has "follow" or "stop" strategies for moving obstacles ahead in
-                    the same lane, and "side-pass" strategy for static obstacles. Vehicles of speed less or equal to
-                    0.5 m/s are treated as static by both prediction module and planning module.
+                    In Apollo 5.0, the planning module has "follow" or "stop" strategies for moving obstacles ahead in
+                    the same lane and a "side-pass" strategy for static obstacles. Vehicles of speed less or equal to
+                    0.5 m/s are treated as static by both the prediction module and planning module.
                 </p>
                 <p>
-                    In this case, the obstacle vehicle speed was set to be 0.5 m/s, at the decision boundary. Due to
-                    noise, the actual speed might fluctuate around 0.5m/s, causing the planning module to switch
-                    between strategies for moving and static obstacle.
+                    In this case, the obstacle vehicle speed was 0.5 m/s, at the decision boundary. Due to noise, the
+                    actual speed might fluctuate around 0.5m/s, causing the planning module to switch between strategies
+                    for moving and static obstacles.
                 </p>
                 <p>
-                    This is a only common overtake scenario for a human driver.
+                    Human drivers should be able to handle this typical overtake scenario easily.
                 </p>
-                <!--                    <p><b>Video description</b></p>-->
-                <!--                    <p>The ego vehicle first yields to NPC vehicle 4 and stops completely (<i class="ts"-->
-                <!--                                                                                              data-target="wrong-switch-video"-->
-                <!--                                                                                              data-value="17.3">17s</i>).-->
-                <!--                        Then, the ego vehicle restarts its motion to overtake quickly,-->
-                <!--                        even though the NPC vehicle has not pass through the collision region yet (<i class="ts"-->
-                <!--                                                                                                      data-target="wrong-switch-video"-->
-                <!--                                                                                                      data-value="19">19s</i>).-->
-                <!--                        Hence, a collision occurs (<i class="ts" data-target="wrong-switch-video"-->
-                <!--                                                      data-value="21.5">21s</i>).-->
-                <!--                        In this case, since the ego vehicle has decided to yield to the NPC vehicle,-->
-                <!--                        it should stop and wait until the NPC vehicle passes the collision region.</p>-->
             </div>
         </div>
         <div class="media">
@@ -124,30 +106,30 @@
             <div class="media-body">
                 <h5 class="mt-0">Deadlock in a junction</h5>
                 <p>
-                    In the video, Apollo is expected to turn left in the junction, and there is an obstacle driving
-                    forward through and meet Apollo inside the junction. The obstacle has basic collision avoidance
-                    which stops if obstacle in front is detected. Both vehicle stop in the junction and never move
+                    Apollo needed to turn left in the junction in the video, and there is an obstacle driving across and
+                    meeting Apollo inside the junction. The obstacle has implemented simple collision avoidance, which
+                    stops if an obstacle in front is detected. Both vehicles stopped in the junction and never moved
                     again.
                 </p>
                 <p>
-                    The case all started with incorrect prediction result of the obstacle vehicle. The obstacle
-                    vehicle was predicted to turn left, which would not intersect Apollo's path. As a result, apollo
+                    The case all started with an incorrect prediction result of the obstacle vehicle. The predicted
+                    trajectory of the obstacle was a left-turn and did not intersect Apollo's path. As a result, Apollo
                     continued in its left-turning lane.
                 </p>
                 <p>
-                    When Apollo's prediction module realized that the obstacle vehicle was driving forward, instead
-                    of turning left, it started to brake but it was already too late. Consequently, both vehicle
-                    came to a position where they blocked each other.
+                    When Apollo's prediction module realized that the obstacle vehicle was driving forward, it started
+                    to brake, but it was already too late. Eventually, both vehicles came to a position where they
+                    blocked each other.
                 </p>
                 <p>
-                    Apollo's planning module does not support "side-pass" inside junctions, thus when its front path
-                    is blocked, it cannot get out of this deadlock situation by itself. The obstacle vehicle
-                    implemented by Simulator does not support "side-pass" either.
+                    Apollo's planning module does not support "side-pass" inside junctions; thus, it cannot get out of
+                    this deadlock situation by itself when its front path is blocked. The obstacle vehicle implemented
+                    by Simulator does not support "side-pass" either.
                 </p>
                 <p>
-                    A human driver would notice the incoming vehicle and brake early to give way. Even after it ended up
-                    in the deadlock situation, human drivers would improvise and negotiate a way out of the situation
-                    quickly, as it is unsafe to stop inside the junction.
+                    A human driver would notice the incoming vehicle and brake early to give way. Even after it ends up
+                    in the deadlock situation, human drivers would improvise and quickly negotiate a way out of the
+                    situation.
                 </p>
             </div>
         </div>
@@ -160,32 +142,30 @@
             <div class="media-body">
                 <h5 class="mt-0">Stop at a crosswalk to give way to a pedestrian</h5>
                 <p>
-                    In the video, the traffic light was green when Apollo was entering the junction. However, there is a
-                    pedestrian still crossing through on the crosswalk. This usually happens when the pedestrian is
-                    elderly or disabled. Apollo should brake early and come to a complete stop before stop line (white
-                    line) to give way even though it was green light.
+                    In the video, the traffic light was green when Apollo was entering the junction. However, there was
+                    a pedestrian (who could be elderly or disabled) still crossing through on the crosswalk. Apollo
+                    should have braked early and come to a complete stop before the stop line (white line), even under
+                    the green light.
                 </p>
                 <p>
-                    Note that pedestrians of speed less than 0.2 m/s (default configuration) are considered
-                    stationary by the prediction module, and no predicted trajectory is generated for them.
-                    In this case, the pedestrian was crossing at 0.6 m/s, thus there was a predicted trajectory
-                    associated with the pedestrian. However, the prediction module only predicts 8 seconds i.e. 4.8
-                    meters ahead of the pedestrian.
+                    Apollo considers pedestrians of speed less than 0.2m/s stationery and does not generate a prediction
+                    trajectory for them. In this case, the pedestrian was crossing at 0.6 m/s, and there was a predicted
+                    trajectory associated with the pedestrian. However, the prediction module only predicts 8 seconds,
+                    i.e., 4.8 meters ahead of the pedestrian.
                 </p>
                 <p>
-                    The planning module won't brake when its path is clear. i.e. not blocked by other obstacle or
+                    The planning module will not brake when its path is clear. i.e., not blocked by other obstacles or
                     not intersected by other obstacle's predicted trajectory.
                 </p>
                 <p>
-                    As a result, Apollo only started to brake when the pedestrian was 4.8 meters away from its
-                    planned trajectory and when it came to full stop, it happened to stopped on top of the
-                    crosswalk. If the prediction duration is longer than 8 seconds, Apollo would be able to brake
-                    early and stop before stop line without blocking the crosswalk.
+                    As a result, Apollo only started to brake when the pedestrian was 4.8 meters away from its planned
+                    trajectory, and when it came to a full stop, it happened to stop on top of the crosswalk. Apollo
+                    would have braked early if the prediction duration is longer than 8 seconds and stopped before the
+                    stop line without blocking the crosswalk.
                 </p>
                 <p>
-                    Human drivers always look out for pedestrian crossing entering or leaving junctions. When there
-                    are pedestrians crossing, they are required to give way to pedestrians even though it might be
-                    green light.
+                    Human drivers always look out for pedestrian crossing near junctions. When pedestrians are crossing,
+                    human drivers must give way to pedestrians even under a green light.
                 </p>
             </div>
         </div>
