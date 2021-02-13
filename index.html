@@ -10,7 +10,6 @@
 </head>
 <body>
 <div class="container">
-
     <div class="container">
         <div class="jumbotron jumbotron-fluid text-center image-title">
             <div class="title-background"></div>
@@ -19,479 +18,178 @@
                 <h1 class="display-5">Collision Avoidance Testing on Complete Maps for Autonomous Driving Systems</h1>
             </div>
         </div>
-
-        <!--        <section class="container">-->
-        <!--            <div class="row">-->
-        <!--                <h2>MAP MODELING</h2>-->
-        <!--            </div>-->
-        <!--            <div class="row">-->
-        <!--                <div class="col-sm">-->
-        <!--                    <img src="static/media/san_francisco_cut.png" alt="San Francisco Map" width="100%">-->
-        <!--                </div>-->
-        <!--                <div class="col-sm">-->
-        <!--                    <a href="https://content.lgsvlsimulator.com/maps/sanfrancisco/"><h5>San Francisco</h5></a>-->
-        <!--                    <p>The map contains 91 junctions, including:</p>-->
-        <!--                    <ul>-->
-        <!--                        <li>88 signal-controlled junctions</li>-->
-        <!--                        <li>3 stop-sign controlled junctions</li>-->
-        <!--                    </ul>-->
-        <!--                    <p>In 88 signal-controlled junctions, there are</p>-->
-        <!--                    <ul>-->
-        <!--                        <li>819 junction lanes in total</li>-->
-        <!--                        <li>721 junction lanes intersected by other junction lanes</li>-->
-        <!--                    </ul>-->
-        <!--                    &lt;!&ndash;                <p>We set all traffic lights to <span style="color: green">GREEN</span> to simulate uncontrolled junctions.</p>&ndash;&gt;-->
-        <!--                    <p>From 721 junction lanes, <b><i>ATLAS</i></b> produces: </p>-->
-        <!--                    <ul>-->
-        <!--                        <li>42 junction lane classes in total</li>-->
-        <!--                        <li>17 junction lane classes selected for testing</li>-->
-        <!--                    </ul>-->
-        <!--                    <p>As a result, <b><i>ATLAS</i></b> run testing on 17 junction lanes (one lane per selected class).-->
-        <!--                    </p>-->
-        <!--                    <p>The details of junction lane classification are shown in table below.</p>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--            <div class="row flex-row justify-content-center mt-3">-->
-        <!--                <table class="table table-sm w-75">-->
-        <!--                    <caption class="text-center">17 Selected Junction Lane Classes</caption>-->
-        <!--                    <thead>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="col">Junction Lane Class</th>-->
-        <!--                        <th scope="col">Intersection Vector</th>-->
-        <!--                        <th scope="col">Number of Lanes</th>-->
-        <!--                    </tr>-->
-        <!--                    </thead>-->
-        <!--                    <tbody>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;654</th>-->
-        <!--                        <td>2=>-4&emsp;2=>-3</td>-->
-        <!--                        <td>29</td>-->
-        <!--                    </tr>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;660</th>-->
-        <!--                        <td>4=>-2&emsp;4=>-3</td>-->
-        <!--                        <td>27</td>-->
-        <!--                    </tr>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;672</th>-->
-        <!--                        <td>6=>-2&emsp;6=>-4&emsp;3=>-5</td>-->
-        <!--                        <td>51</td>-->
-        <!--                    </tr>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;675</th>-->
-        <!--                        <td>2=>-6&emsp;2=>-5&emsp;2=>-3</td>-->
-        <!--                        <td>16</td>-->
-        <!--                    </tr>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;678</th>-->
-        <!--                        <td>6=>-2&emsp;3=>-5&emsp;3=>-4</td>-->
-        <!--                        <td>19</td>-->
-        <!--                    </tr>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;682</th>-->
-        <!--                        <td>5=>-2&emsp;4=>-2&emsp;5=>-3</td>-->
-        <!--                        <td>17</td>-->
-        <!--                    </tr>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;684</th>-->
-        <!--                        <td>2=>-6&emsp;2=>-5&emsp;4=>-6</td>-->
-        <!--                        <td>32</td>-->
-        <!--                    </tr>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;737</th>-->
-        <!--                        <td>4=>-2&emsp;3=>-6&emsp;3=>-5</td>-->
-        <!--                        <td>5</td>-->
-        <!--                    </tr>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;739</th>-->
-        <!--                        <td>4=>-2&emsp;6=>-3&emsp;4=>-5</td>-->
-        <!--                        <td>4</td>-->
-        <!--                    </tr>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;742</th>-->
-        <!--                        <td>5=>-3&emsp;2=>-6&emsp;2=>-4</td>-->
-        <!--                        <td>1</td>-->
-        <!--                    </tr>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;1062</th>-->
-        <!--                        <td>4=>-3&emsp;2=>-3</td>-->
-        <!--                        <td>4</td>-->
-        <!--                    </tr>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;1066</th>-->
-        <!--                        <td>2=>-4&emsp;3=>-4</td>-->
-        <!--                        <td>4</td>-->
-        <!--                    </tr>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;1067</th>-->
-        <!--                        <td>4=>-2&emsp;3=>-2</td>-->
-        <!--                        <td>4</td>-->
-        <!--                    </tr>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;1132</th>-->
-        <!--                        <td>3=>-2&emsp;3=>-4</td>-->
-        <!--                        <td>6</td>-->
-        <!--                    </tr>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;1430</th>-->
-        <!--                        <td>5=>-2&emsp;3=>-6&emsp;7=>-2&emsp;3=>-8&emsp;7=>-4</td>-->
-        <!--                        <td>12</td>-->
-        <!--                    </tr>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;1431</th>-->
-        <!--                        <td>5=>-2&emsp;3=>-6&emsp;7=>-2&emsp;3=>-8&emsp;3=>-4</td>-->
-        <!--                        <td>12</td>-->
-        <!--                    </tr>-->
-        <!--                    <tr>-->
-        <!--                        <th scope="row">JLG&#45;&#45;1432</th>-->
-        <!--                        <td>5=>-8&emsp;7=>-2&emsp;3=>-8&emsp;7=>-4&emsp;3=>-6</td>-->
-        <!--                        <td>12</td>-->
-        <!--                    </tr>-->
-        <!--                    </tbody>-->
-        <!--                </table>-->
-        <!--            </div>-->
-        <!--        </section>-->
-
-        <!--        <section class="container">-->
-        <!--            <div class="row">-->
-        <!--                <h2>JUNCTION LANE TOPOLOGY DIAGRAMS</h2>-->
-        <!--            </div>-->
-
-        <!--            <div class="row flex-row justify-content-center">-->
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/654.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;654 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;654</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/660.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;660 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;660</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/672.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;672 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;672</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/675.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;675 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;675</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/678.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;678 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;678</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/682.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;682 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;682</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/684.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;684 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;684</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/737.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;737 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;737</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/739.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;739 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;739</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/742.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;742 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;742</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/1062.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;1062 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;1062</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/1066.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;1066 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;1066</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/1067.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;1067 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;1067</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/1132.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;1132 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;1132</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/1430.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;1430 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;1430</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/1431.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;1431 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;1431</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--                <div class="topology-diagram">-->
-        <!--                    <img src="static/media/junction_lane_diagrams/1432.svg" class="card-img-top"-->
-        <!--                         alt="JLG&#45;&#45;1432 SVG diagram">-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text text-center">JLG&#45;&#45;1432</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </section>-->
-
-        <section class="container">
-            <div class="row">
-                <div class="col">
-                    <h2>ISSUES DISCOVERED</h2>
-                    <!--                    <p>Note that when Apollo's bounding box (not 3D model) intersects with any obstacle's bounding box,-->
-                    <!--                        a <b>collision</b> occurs.-->
-                    <!--                        <br>The bounding box is a bit larger than Apollo's 3D model showing in the video (i.e. Apollo's-->
-                    <!--                        website-based human machine interface).-->
-                    <!--                        <br>As a result, <b>collision</b> may trigger even when there is gap between Apollo's 3D model-->
-                    <!--                        and obstacle's bounding box.-->
-                    <!--                    </p>-->
-                </div>
-            </div>
-            <div class="media">
-                <video id="no-prediction-video" width="50%" controls class="align-self-start mr-3">
-                    <source src="static/media/issues_videos/No_motion_prediction_of_an_NPC_vehicle_under_low_speed.mp4"
-                            type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="media-body">
-                    <h5 class="mt-0">No motion prediction of an NPC vehicle under low speed</h5>
-                    <p>
-                        Apollo's prediction module returns no predicted trajectory for "still" vehicles of speed less
-                        than 0.99 m/s (default configuration). Since the speed of the vehicle in this scenario was 0.5
-                        m/s, no predicted trajectory was generated.
-                    </p>
-                    <p>
-                        As a result, the planning module did not slow down since its planned trajectory was not blocked
-                        by any obstacle or their predicted traveling paths, which resulted in collision.
-                    </p>
-                    <p>
-                        This scenario is not at all challenging for human drivers, as there is sufficient space and time
-                        for braking to give way to the slowly moving obstacle vehicle.
-                    </p>
-                </div>
-            </div>
-            <div class="media">
-                <video id="wrong-prediction-video" width="50%" controls class="align-self-start mr-3">
-                    <source src="static/media/issues_videos/Wrong_motion_prediction_of_an_NPC_vehicle..mp4"
-                            type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="media-body">
-                    <h5 class="mt-0">Wrong motion prediction of an NPC vehicle</h5>
-                    <p>
-                        Apollo's prediction module produced a wrong predicted trajectory for the obstacle vehicle ahead,
-                        letting Apollo to believe that the vehicle was maintaining its own lane instead of cutting in to
-                        Apollo's lane.
-                    </p>
-                    <p>
-                        As a result, Apollo's planning module did not brake to give way or bypass from left side, which
-                        eventually led to collision.
-                    </p>
-                    <p>
-                        it is apparent to a human driver that the vehicle in front is performing slow lane changing and
-                        would brake to give way.
-                    </p>
-                    <!--                    <p><b>Video description</b></p>-->
-                    <!--                    <p>When the ego detects the NPC vehicle moving from the right, it selects to overtake (<i class="ts"-->
-                    <!--                                                                                                              data-target="wrong-overtaking-video"-->
-                    <!--                                                                                                              data-value="6">6s</i>).-->
-                    <!--                        At <i class="ts" data-target="wrong-overtaking-video" data-value="8.5">8s</i>,-->
-                    <!--                        the ego vehicle finds that it cannot pass through the NPC and decides to yield to it.-->
-                    <!--                        However, the current speed is 34 km/h, and the ego vehicle cannot stop itself,-->
-                    <!--                        resulting in a collision (<i class="ts" data-target="wrong-overtaking-video"-->
-                    <!--                                                     data-value="9.2">9s</i>).-->
-                    <!--                        Since there is a long distance when the ego vehicle detects the NPC vehicle,-->
-                    <!--                        it could yield to the NPC vehicle if it slowed down its motion.</p>-->
-                </div>
-            </div>
-            <div class="media">
-                <video id="wrong-switch-video" width="50%" controls class="align-self-start mr-3">
-                    <source src="static/media/issues_videos/Decision_oscillation_during_lane_changing.mp4"
-                            type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="media-body">
-                    <h5 class="mt-0">Decision oscillation during lane changing</h5>
-                    <p>
-                        In Apollo 5.0, planning module has "follow" or "stop" strategies for moving obstacles ahead in
-                        the same lane, and "side-pass" strategy for static obstacles. Vehicles of speed less or equal to
-                        0.5 m/s are treated as static by both prediction module and planning module.
-                    </p>
-                    <p>
-                        In this case, the obstacle vehicle speed was set to be 0.5 m/s, at the decision boundary. Due to
-                        noise, the actual speed might fluctuate around 0.5m/s, causing the planning module to switch
-                        between strategies for moving and static obstacle.
-                    </p>
-                    <p>
-                        This is a only common overtake scenario for a human driver.
-                    </p>
-                    <!--                    <p><b>Video description</b></p>-->
-                    <!--                    <p>The ego vehicle first yields to NPC vehicle 4 and stops completely (<i class="ts"-->
-                    <!--                                                                                              data-target="wrong-switch-video"-->
-                    <!--                                                                                              data-value="17.3">17s</i>).-->
-                    <!--                        Then, the ego vehicle restarts its motion to overtake quickly,-->
-                    <!--                        even though the NPC vehicle has not pass through the collision region yet (<i class="ts"-->
-                    <!--                                                                                                      data-target="wrong-switch-video"-->
-                    <!--                                                                                                      data-value="19">19s</i>).-->
-                    <!--                        Hence, a collision occurs (<i class="ts" data-target="wrong-switch-video"-->
-                    <!--                                                      data-value="21.5">21s</i>).-->
-                    <!--                        In this case, since the ego vehicle has decided to yield to the NPC vehicle,-->
-                    <!--                        it should stop and wait until the NPC vehicle passes the collision region.</p>-->
-                </div>
-            </div>
-            <div class="media">
-                <video id="soft-braking-video" width="50%" controls class="align-self-start mr-3">
-                    <source src="static/media/issues_videos/Deadlock_in_a_junction..mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="media-body">
-                    <h5 class="mt-0">Deadlock in a junction</h5>
-                    <p>
-                        The case all started with incorrect prediction result of the obstacle vehicle. The obstacle
-                        vehicle was predicted to turn left, which would not intersect Apollo's path. As a result, apollo
-                        continued in its left-turning lane.
-                    </p>
-                    <p>
-                        When Apollo's prediction module realized that the obstacle vehicle was driving forward, instead
-                        of turning left, it started to brake but it was already too late. Consequently, both vehicle
-                        came to a position where they blocked each other.
-                    </p>
-                    <p>
-                        Apollo's planning module does not support "side-pass" inside junctions, thus when its front path
-                        is blocked, it cannot get out of this deadlock situation by itself. The obstacle vehicle
-                        implemented by Simulator does not support "side-pass" either.
-                    </p>
-                    <p>
-                        For a human driver, he would notice the incoming vehicle and brake early to give way. Even after
-                        it ended up in the deadlock situation, human drivers would improvise and negotiate a way out of
-                        the situation quickly, as it is unsafe to stop inside the junction.
-                    </p>
-                    <!--                    <p><b>Video description</b></p>-->
-                    <!--                    <p>The ego vehicle must brake immediately-->
-                    <!--                        when the NPC vehicles start their motion at around <i class="ts"-->
-                    <!--                                                                              data-target="soft-braking-video"-->
-                    <!--                                                                              data-value="3">3s</i>.-->
-                    <!--                        However, the vehicle brakes too softly capped at 50%-->
-                    <!--                        of the maximal braking force (<i class="ts" data-target="soft-braking-video"-->
-                    <!--                                                         data-value="5.2">5s</i>).-->
-                    <!--                        Thus, a collision occurs (<i class="ts" data-target="soft-braking-video" data-value="7">7s</i>).-->
-                    <!--                        However, if the ego vehicle braked with the maximal braking force, it could avoid collisions.-->
-                    <!--                    </p>-->
-                </div>
-            </div>
-            <div class="media">
-                <video id="coordination-video" width="50%" controls class="align-self-start mr-3">
-                    <source src="static/media/issues_videos/Stop_at_a_crosswalk_to_give_way_to_a_pedestrian.mp4"
-                            type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="media-body">
-                    <h5 class="mt-0">Stop at a crosswalk to give way to a pedestrian</h5>
-                    <p>
-                        Note that pedestrians of speed less than 0.2 m/s (default configuration) are considered
-                        stationary by the prediction module, and no predicted trajectory is generated for them.
-                        In this case, the pedestrian was crossing at 0.6 m/s, thus there was a predicted trajectory
-                        associated with the pedestrian. However, the prediction module only predicts 8 seconds i.e. 4.8
-                        meters ahead of the pedestrian.
-                    </p>
-                    <p>
-                        The planning module won't brake when its path is clear. i.e. not blocked by other obstacle or
-                        not intersected by other obstacle's predicted trajectory.
-                    </p>
-                    <p>
-                        As a result, Apollo only started to brake when the pedestrian was 4.8 meters away from its
-                        planned trajectory and when it came to full stop, it happened to stopped on top of the
-                        crosswalk. If the prediction duration is longer than 8 seconds, Apollo would be able to brake
-                        early and stop before stop line without blocking the crosswalk.
-                    </p>
-                    <p>
-                        Human drivers always look out for pedestrian crossing entering or leaving junctions. When there
-                        are pedestrians crossing, they are required to give way to pedestrians even though it might be
-                        green light.
-                    </p>
-                    <!--                    <p><b>Video description</b></p>-->
-                    <!--                    <p>First, the ego vehicle detects NPC 3 in front, slows down and follows it (the green wall) (<i-->
-                    <!--                            class="ts" data-target="coordination-video" data-value="1.943">1s</i>).-->
-                    <!--                        Then, the ego vehicle detects NPC 2 crossing the junction and determines to-->
-                    <!--                        overtake by acceleration.-->
-                    <!--                        however, the ego vehicle finally slows down (<i class="ts" data-target="coordination-video"-->
-                    <!--                                                                        data-value="4.3">4s</i>) and-->
-                    <!--                        collides with NPC 2 (<i class="ts" data-target="coordination-video" data-value="5.5">5s</i>).-->
-                    <!--                        In this case, the ego vehicle can pass through the collision region by overtaking-->
-                    <!--                        without colliding with NPC 3 in front since NPC 3 passes-->
-                    <!--                        through the ego vehicle’s destination within the first 4 seconds.-->
-                    <!--                        An example of overtaking is shown in-->
-                    <!--                        <button type="button" class="btn btn-link p-0" data-toggle="modal"-->
-                    <!--                                data-target="#coordination-modal">-->
-                    <!--                            this video-->
-                    <!--                        </button>-->
-                    <!--                        .-->
-                    <!--                    </p>-->
-                </div>
-            </div>
-        </section>
     </div>
+
+    <section class="container">
+        <h2 class="display-6 my-3">ISSUES DISCOVERED</h2>
+        <div class="media">
+            <video id="no-prediction-video" width="50%" controls class="align-self-start mr-3">
+                <source src="static/media/issues_videos/No_motion_prediction_of_an_NPC_vehicle_under_low_speed.mp4"
+                        type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="media-body">
+                <h5 class="mt-0">No motion prediction of an NPC vehicle under low speed</h5>
+                <p>
+                    In the video, Apollo is expected to drive straight across the junction. However, it
+                    seems to be too confident about bypassing the obstacle coming from right side, which eventually
+                    resulted in collision.
+                </p>
+                <p>
+                    Apollo's prediction module returns no predicted trajectory for "still" vehicles of speed less
+                    than 0.99 m/s (default configuration). Since the speed of the vehicle in this scenario was 0.5
+                    m/s, no predicted trajectory was generated.
+                </p>
+                <p>
+                    As a result, the planning module did not slow down since its planned trajectory was not blocked
+                    by any obstacle or their predicted traveling paths, which resulted in collision.
+                </p>
+                <p>
+                    This scenario is not at all challenging for human drivers, as there is sufficient space and time
+                    for braking to give way to the slowly moving obstacle vehicle.
+                </p>
+            </div>
+        </div>
+        <div class="media">
+            <video id="wrong-prediction-video" width="50%" controls class="align-self-start mr-3">
+                <source src="static/media/issues_videos/Wrong_motion_prediction_of_an_NPC_vehicle..mp4"
+                        type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="media-body">
+                <h5 class="mt-0">Wrong motion prediction of an NPC vehicle</h5>
+                <p>
+                    In this video, Apollo is expected to give way or by pass the slow vehicle cutting in ahead.
+                </p>
+                <p>
+                    Apollo's prediction module produced a wrong predicted trajectory for the front obstacle vehicle,
+                    letting Apollo to believe that the vehicle was maintaining its own lane instead of cutting in to
+                    Apollo's lane.
+                </p>
+                <p>
+                    As a result, Apollo's planning module did not brake to give way or bypass from left side, which
+                    eventually led to collision.
+                </p>
+                <p>
+                    It is apparent that human drivers can easily notice the cutting-in vehicle ahead and would brake to
+                    give way.
+                </p>
+            </div>
+        </div>
+        <div class="media">
+            <video id="wrong-switch-video" width="50%" controls class="align-self-start mr-3">
+                <source src="static/media/issues_videos/Decision_oscillation_during_lane_changing.mp4"
+                        type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="media-body">
+                <h5 class="mt-0">Decision oscillation during lane changing</h5>
+                <p>
+                    In the video, Apollo first decided to overtake the slow moving vehicle ahead, but the overtaking
+                    action is terminated halfway and Apollo started to follow the vehicle on top of lane
+                    boundaries.
+                </p>
+                <p>
+                    In Apollo 5.0, planning module has "follow" or "stop" strategies for moving obstacles ahead in
+                    the same lane, and "side-pass" strategy for static obstacles. Vehicles of speed less or equal to
+                    0.5 m/s are treated as static by both prediction module and planning module.
+                </p>
+                <p>
+                    In this case, the obstacle vehicle speed was set to be 0.5 m/s, at the decision boundary. Due to
+                    noise, the actual speed might fluctuate around 0.5m/s, causing the planning module to switch
+                    between strategies for moving and static obstacle.
+                </p>
+                <p>
+                    This is a only common overtake scenario for a human driver.
+                </p>
+                <!--                    <p><b>Video description</b></p>-->
+                <!--                    <p>The ego vehicle first yields to NPC vehicle 4 and stops completely (<i class="ts"-->
+                <!--                                                                                              data-target="wrong-switch-video"-->
+                <!--                                                                                              data-value="17.3">17s</i>).-->
+                <!--                        Then, the ego vehicle restarts its motion to overtake quickly,-->
+                <!--                        even though the NPC vehicle has not pass through the collision region yet (<i class="ts"-->
+                <!--                                                                                                      data-target="wrong-switch-video"-->
+                <!--                                                                                                      data-value="19">19s</i>).-->
+                <!--                        Hence, a collision occurs (<i class="ts" data-target="wrong-switch-video"-->
+                <!--                                                      data-value="21.5">21s</i>).-->
+                <!--                        In this case, since the ego vehicle has decided to yield to the NPC vehicle,-->
+                <!--                        it should stop and wait until the NPC vehicle passes the collision region.</p>-->
+            </div>
+        </div>
+        <div class="media">
+            <video id="soft-braking-video" width="50%" controls class="align-self-start mr-3">
+                <source src="static/media/issues_videos/Deadlock_in_a_junction..mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="media-body">
+                <h5 class="mt-0">Deadlock in a junction</h5>
+                <p>
+                    In the video, Apollo is expected to turn left in the junction, and there is an obstacle driving
+                    forward through and meet Apollo inside the junction. The obstacle has basic collision avoidance
+                    which stops if obstacle in front is detected. Both vehicle stop in the junction and never move
+                    again.
+                </p>
+                <p>
+                    The case all started with incorrect prediction result of the obstacle vehicle. The obstacle
+                    vehicle was predicted to turn left, which would not intersect Apollo's path. As a result, apollo
+                    continued in its left-turning lane.
+                </p>
+                <p>
+                    When Apollo's prediction module realized that the obstacle vehicle was driving forward, instead
+                    of turning left, it started to brake but it was already too late. Consequently, both vehicle
+                    came to a position where they blocked each other.
+                </p>
+                <p>
+                    Apollo's planning module does not support "side-pass" inside junctions, thus when its front path
+                    is blocked, it cannot get out of this deadlock situation by itself. The obstacle vehicle
+                    implemented by Simulator does not support "side-pass" either.
+                </p>
+                <p>
+                    A human driver would notice the incoming vehicle and brake early to give way. Even after it ended up
+                    in the deadlock situation, human drivers would improvise and negotiate a way out of the situation
+                    quickly, as it is unsafe to stop inside the junction.
+                </p>
+            </div>
+        </div>
+        <div class="media">
+            <video id="coordination-video" width="50%" controls class="align-self-start mr-3">
+                <source src="static/media/issues_videos/Stop_at_a_crosswalk_to_give_way_to_a_pedestrian.mp4"
+                        type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="media-body">
+                <h5 class="mt-0">Stop at a crosswalk to give way to a pedestrian</h5>
+                <p>
+                    In the video, the traffic light was green when Apollo was entering the junction. However, there is a
+                    pedestrian still crossing through on the crosswalk. This usually happens when the pedestrian is
+                    elderly or disabled. Apollo should brake early and come to a complete stop before stop line (white
+                    line) to give way even though it was green light.
+                </p>
+                <p>
+                    Note that pedestrians of speed less than 0.2 m/s (default configuration) are considered
+                    stationary by the prediction module, and no predicted trajectory is generated for them.
+                    In this case, the pedestrian was crossing at 0.6 m/s, thus there was a predicted trajectory
+                    associated with the pedestrian. However, the prediction module only predicts 8 seconds i.e. 4.8
+                    meters ahead of the pedestrian.
+                </p>
+                <p>
+                    The planning module won't brake when its path is clear. i.e. not blocked by other obstacle or
+                    not intersected by other obstacle's predicted trajectory.
+                </p>
+                <p>
+                    As a result, Apollo only started to brake when the pedestrian was 4.8 meters away from its
+                    planned trajectory and when it came to full stop, it happened to stopped on top of the
+                    crosswalk. If the prediction duration is longer than 8 seconds, Apollo would be able to brake
+                    early and stop before stop line without blocking the crosswalk.
+                </p>
+                <p>
+                    Human drivers always look out for pedestrian crossing entering or leaving junctions. When there
+                    are pedestrians crossing, they are required to give way to pedestrians even though it might be
+                    green light.
+                </p>
+            </div>
+        </div>
+    </section>
 
 </div>
 
